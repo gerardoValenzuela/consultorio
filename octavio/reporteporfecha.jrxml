@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9697f01c-7b6e-4053-adf0-d2ba38e7f08d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechafinal" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechainicial" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     cita2.`clave` AS cita2_clave,
+     cita2.`nombre` AS cita2_nombre,
+     cita2.`email` AS cita2_email,
+     cita2.`telefono` AS cita2_telefono,
+     cita2.`ciudad` AS cita2_ciudad,
+     cita2.`edad` AS cita2_edad,
+     cita2.`fecha_cita` AS cita2_fecha_cita,
+     cita2.`hora_cita` AS cita2_hora_cita,
+     cita2.`comentario` AS cita2_comentario
+FROM
+     `cita2` cita2
+where cita2.fecha_cita between $P{fechainicial} and $P{fechafinal}]]>
+	</queryString>
+	<field name="cita2_clave" class="java.lang.Integer"/>
+	<field name="cita2_nombre" class="java.lang.String"/>
+	<field name="cita2_email" class="java.lang.String"/>
+	<field name="cita2_telefono" class="java.lang.String"/>
+	<field name="cita2_ciudad" class="java.lang.String"/>
+	<field name="cita2_edad" class="java.lang.String"/>
+	<field name="cita2_fecha_cita" class="java.lang.String"/>
+	<field name="cita2_hora_cita" class="java.lang.String"/>
+	<field name="cita2_comentario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="25" width="131" height="20" uuid="2b05ccf2-af06-498c-9fd5-8629f3fee9a8"/>
+				<text><![CDATA[REPORTE POR FECHAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="82" y="0" width="100" height="20" uuid="74327f4c-d068-4a95-abdd-9f2f5d79b53f"/>
+				<textFieldExpression><![CDATA[$P{fechainicial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="54" height="20" uuid="d737cbff-bb31-4a20-994c-b527a271c761"/>
+				<text><![CDATA[DE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="1" width="25" height="19" uuid="210a462e-5142-4237-bd38-72eccfc91114"/>
+				<text><![CDATA[A:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="409" y="1" width="100" height="20" uuid="b36763a8-9661-4105-bf34-d09f138e641a"/>
+				<textFieldExpression><![CDATA[$P{fechafinal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="54" y="2" width="100" height="20" uuid="76ee3be8-ed2a-4ff9-84cc-2ea8ab95088a"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="2" width="100" height="20" uuid="653ca334-fded-4c65-bb71-94fa65fa3c5f"/>
+				<text><![CDATA[FECHA DE CITA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="2" width="100" height="20" uuid="4cd46879-79b9-4bf7-b2d0-8daa4d621a93"/>
+				<text><![CDATA[HORA DE CITA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="54" y="18" width="100" height="20" uuid="63e04dc2-99c8-4843-a2aa-5cc89cf42e4d"/>
+				<textFieldExpression><![CDATA[$F{cita2_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="18" width="100" height="20" uuid="6d5918d9-cf7c-4365-b65e-6fd0c839d497"/>
+				<textFieldExpression><![CDATA[$F{cita2_fecha_cita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="18" width="100" height="20" uuid="96cc77cb-9460-4352-8f30-4a7050cb14a2"/>
+				<textFieldExpression><![CDATA[$F{cita2_hora_cita}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

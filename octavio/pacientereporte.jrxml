@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c64a1899-c5fb-429c-9546-9c37b3c7962f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pacientes.`clave` AS pacientes_clave,
+     pacientes.`nombre` AS pacientes_nombre,
+     pacientes.`apellido` AS pacientes_apellido,
+     pacientes.`direccion` AS pacientes_direccion,
+     pacientes.`telefono` AS pacientes_telefono,
+     pacientes.`edad` AS pacientes_edad,
+     pacientes.`tratamiento` AS pacientes_tratamiento
+FROM
+     `pacientes` pacientes]]>
+	</queryString>
+	<field name="pacientes_clave" class="java.lang.String"/>
+	<field name="pacientes_nombre" class="java.lang.String"/>
+	<field name="pacientes_apellido" class="java.lang.String"/>
+	<field name="pacientes_direccion" class="java.lang.String"/>
+	<field name="pacientes_telefono" class="java.lang.String"/>
+	<field name="pacientes_edad" class="java.lang.String"/>
+	<field name="pacientes_tratamiento" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="29" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="a54fd24e-f09e-4e64-848a-eefd6efde62f"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="2" width="100" height="20" uuid="b601ff1f-db63-4e6e-a37f-df12af024181"/>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="2" width="100" height="20" uuid="477ee5fd-f479-48c9-98fd-cd46a1ebac33"/>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="2" width="100" height="20" uuid="08efe8c7-602f-4bd6-8e27-e8cbebece0cb"/>
+				<text><![CDATA[EDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20" uuid="7981af20-6f2e-42c4-b475-423a6264e5b9"/>
+				<text><![CDATA[SEXO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="665674d1-fa59-4445-8507-113821abe8ca"/>
+				<textFieldExpression><![CDATA[$F{pacientes_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="0" width="100" height="20" uuid="ea54d0db-7431-4e94-82fc-9f82bd6a9025"/>
+				<textFieldExpression><![CDATA[$F{pacientes_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="0" width="100" height="20" uuid="5b38a30c-1dd5-421f-9a2d-fe5b3c1e72b5"/>
+				<textFieldExpression><![CDATA[$F{pacientes_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="0" width="100" height="20" uuid="75c50422-ddc7-4f48-96a8-a1d5fd81e142"/>
+				<textFieldExpression><![CDATA[$F{pacientes_edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="f49b9593-9af5-4bf5-8b58-4f9b00ca1368"/>
+				<textFieldExpression><![CDATA[$F{pacientes_tratamiento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

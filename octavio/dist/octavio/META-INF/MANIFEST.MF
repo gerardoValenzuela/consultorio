@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: 1.7.0_51-b13 (Oracle Corporation)
+Class-Path: lib/mysql-connector-java-5.1.16-bin.jar lib/jcalendar-1.4.
+ jar lib/jcalendar-1.4.jar lib/jasperreports-4.7.1.jar lib/jasperrepor
+ ts-javaflow-4.7.1.jar lib/ConsoleSample.jar lib/UISupportSample.jar l
+ ib/commons-beanutils-1.8.2.jar lib/commons-collections-3.2.1.jar lib/
+ commons-digester-2.1.jar lib/commons-javaflow-20060411.jar lib/common
+ s-logging-1.1.1.jar lib/dpfpenrollment.jar lib/dpfpverification.jar l
+ ib/dpotapi.jar lib/dpotjni.jar lib/groovy-all-1.7.5.jar lib/iText-2.1
+ .7.jar lib/jasperreports-4.7.1.jar lib/jasperreports-javaflow-4.7.1.j
+ ar lib/java-mail-1.4.jar lib/jcalendar-1.4.jar lib/mysql-connector-ja
+ va-5.1.16-bin.jar lib/mysql-connector-java-5.1.23-bin.jar lib/png-enc
+ oder-1.5.jar lib/poi-3.17%20(1).jar lib/poi-3.7.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: octavio.Octavio
+

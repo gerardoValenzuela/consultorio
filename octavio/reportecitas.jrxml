@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="861ab544-19b6-4b62-948a-d655e675aee8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     cita2.`clave` AS cita2_clave,
+     cita2.`nombre` AS cita2_nombre,
+     cita2.`email` AS cita2_email,
+     cita2.`telefono` AS cita2_telefono,
+     cita2.`ciudad` AS cita2_ciudad,
+     cita2.`edad` AS cita2_edad,
+     cita2.`fecha_cita` AS cita2_fecha_cita,
+     cita2.`hora_cita` AS cita2_hora_cita,
+     cita2.`comentario` AS cita2_comentario
+FROM
+     `cita2` cita2
+where cita2.fecha_cita=$P{fecha}]]>
+	</queryString>
+	<field name="cita2_clave" class="java.lang.Integer"/>
+	<field name="cita2_nombre" class="java.lang.String"/>
+	<field name="cita2_email" class="java.lang.String"/>
+	<field name="cita2_telefono" class="java.lang.String"/>
+	<field name="cita2_ciudad" class="java.lang.String"/>
+	<field name="cita2_edad" class="java.lang.String"/>
+	<field name="cita2_fecha_cita" class="java.lang.String"/>
+	<field name="cita2_hora_cita" class="java.lang.String"/>
+	<field name="cita2_comentario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="224" y="36" width="100" height="20" uuid="26d66e25-6378-45b7-b33f-6c320090fcaa"/>
+				<text><![CDATA[citas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="32" y="56" width="100" height="20" uuid="10f817a4-2c7b-43cd-a8c5-908587ace36f"/>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="8" width="100" height="20" uuid="80358aa2-35ee-40b2-b370-47072012a092"/>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="8" width="100" height="20" uuid="3f92ca6a-84af-4c03-9a52-b9c36ded0b7e"/>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="8" width="100" height="20" uuid="71af292d-8a80-4744-9f5d-1585af7b8741"/>
+				<text><![CDATA[hora]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="16" y="5" width="100" height="20" uuid="775c4915-eae9-413a-95ee-fdff36505295"/>
+				<textFieldExpression><![CDATA[$F{cita2_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="5" width="100" height="20" uuid="007acf45-06bb-4408-8461-68d59217f5ee"/>
+				<textFieldExpression><![CDATA[$F{cita2_fecha_cita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="5" width="100" height="20" uuid="2408a846-ae87-446c-8822-876ddb14dfd6"/>
+				<textFieldExpression><![CDATA[$F{cita2_hora_cita}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="efa6e48e-400b-4042-8821-6b992aa324ec"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
