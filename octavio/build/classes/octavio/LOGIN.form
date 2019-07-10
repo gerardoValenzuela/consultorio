@@ -39,7 +39,7 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="usuario" pref="90" max="32767" attributes="0"/>
-                  <Component id="contraseña" max="32767" attributes="0"/>
+                  <Component id="contrasenia" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
           </Group>
@@ -63,7 +63,7 @@
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="contraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="contrasenia" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="39" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -101,7 +101,10 @@
     </Component>
     <Component class="javax.swing.JTextField" name="usuario">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="contrase&#xf1;a">
+    <Component class="javax.swing.JPasswordField" name="contrasenia">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contraseniaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>

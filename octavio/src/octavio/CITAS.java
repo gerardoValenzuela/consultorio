@@ -108,7 +108,7 @@ conectar bd=new conectar();
         i=(String) jComboBox2.getSelectedItem();
         j=jPasswordField1.getPassword();
         
-         sql ="INSERT INTO cita2 (nombre,email,telefono,ciudad,edad,fecha_cita,hora_cita,comentario, sexo, contraseña) VALUES (?,?,?,?,?,?,?,?,?,?)";
+         sql ="INSERT INTO cita2 (nombre,email,telefono,ciudad,edad,fecha_cita,hora_cita,comentario, sexo, contrasenia) VALUES (?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pst = conexion. prepareStatement(sql);
        
@@ -247,7 +247,7 @@ void modificar(){
         i=(String) jComboBox2.getSelectedItem();
         j=jPasswordField1.getPassword();
         
-         sql ="UPDATE cita2 SET nombre='"+b+"',email='"+c+"',telefono='"+d+"',ciudad='"+e+"',edad='"+f+"',fecha_cita='"+g+"',hora_cita='"+h+"',comentario='"+i+"', contraseña" + String.valueOf(j) +"WHERE clave='"+a+"'";
+         sql ="UPDATE cita2 SET nombre='"+b+"',email='"+c+"',telefono='"+d+"',ciudad='"+e+"',edad='"+f+"',fecha_cita='"+g+"',hora_cita='"+h+"',comentario='"+i+"', contrasenia" + String.valueOf(j) +"WHERE clave='"+a+"'";
         try {
             PreparedStatement pst = conexion. prepareStatement(sql);
        
@@ -783,7 +783,7 @@ void botonmodificar(){
                 jTextField4.setText(rs.getString("telefono"));
                 jTextField5.setText(rs.getString("ciudad"));
                 jTextField6.setText(rs.getString("edad"));
-                jPasswordField1.setText(rs.getString("contraseña"));
+                jPasswordField1.setText(rs.getString("contrasenia"));
                 jComboBox2.setSelectedItem(rs.getString("sexo"));
                 fecha.setDate(formateador.parse(rs.getString("fecha_cita")));
                 jComboBox1.setSelectedItem(rs.getString("hora_cita"));

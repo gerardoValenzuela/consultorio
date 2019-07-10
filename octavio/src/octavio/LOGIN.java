@@ -28,7 +28,7 @@ public class LOGIN extends javax.swing.JFrame {
     void limpiar()
     {
     usuario.setText(null);
-    contraseña.setText(null);
+    contrasenia.setText(null);
     }
 void acceder(String usuario, String pass)
     {
@@ -36,7 +36,7 @@ void acceder(String usuario, String pass)
         conectar bd =new conectar ();
         Connection conexion=bd.conexion();
         String cap="";
-       String sql="SELECT * FROM usuario WHERE nombre='"+usuario+"' && contraseña='"+pass+"'";
+       String sql="SELECT * FROM usuario WHERE nombre='"+usuario+"' && contrasenia='"+pass+"'";
         try {
             Statement st=conexion.createStatement();
             ResultSet rs=st.executeQuery(sql);
@@ -85,7 +85,7 @@ void acceder(String usuario, String pass)
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         usuario = new javax.swing.JTextField();
-        contraseña = new javax.swing.JPasswordField();
+        contrasenia = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +102,12 @@ void acceder(String usuario, String pass)
         jLabel2.setText("USUARIO");
 
         jLabel3.setText("CONTRASEÑA");
+
+        contrasenia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseniaActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("SALIR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +134,7 @@ void acceder(String usuario, String pass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                    .addComponent(contraseña))
+                    .addComponent(contrasenia))
                 .addGap(58, 58, 58))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,7 +153,7 @@ void acceder(String usuario, String pass)
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -161,7 +167,7 @@ void acceder(String usuario, String pass)
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String usu = usuario.getText();
-        String pass= new String (contraseña.getPassword());
+        String pass= new String (contrasenia.getPassword());
         acceder(usu,pass);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -169,6 +175,10 @@ void acceder(String usuario, String pass)
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void contraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseniaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,7 +216,7 @@ void acceder(String usuario, String pass)
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField contraseña;
+    private javax.swing.JPasswordField contrasenia;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -14,7 +14,7 @@ Connection conect = null;
 //conect = DriverManager.getConnection("jdbc:mysql://192.168.1.68/octavio","alday","alday");  server91.hostinger.com
   // conect = DriverManager.getConnection("jdbj:mysql://31.220.104.1/tavo","u529891088","dentoimagen1");                
 //servidor-conect = DriverManager.getConnection("jdbc:mysql://sql10.freesqldatabase.com:3306/sql10225315","sql10225315","xUkyHmlEbY");
-conect = DriverManager.getConnection("jdbc:mysql://localhost/octavio","root",""); //Cargamos el Driver Access
+conect = DriverManager.getConnection("jdbc:mysql://67.227.157.152/willdent_octavio","willdent_base","k]8BSZCE&j;#"); //Cargamos el Driver Access
            //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
            //Conectar en red base 
            //String strConect = "jdbc:odbc:Driver=Microsoft Access Driver (*.mdb);DBQ=//servidor/bd_cw/cw.mdb";
